@@ -4,12 +4,11 @@ from re import search
 class Cliente:
     def __init__(self, nome: str, cpf: str, idade: str, telefone: str, email: str):
         self._nome = nome.title()
-        self._cpf = Cliente.validar_cpf(cpf)
-        self._idade = Cliente.validar_idade(idade)
-        self._telefone = Cliente.validar_telefone(telefone)
-        self._email = Cliente.validar_email(email)
+        self._cpf = self.validar_cpf(cpf)
+        self._idade = self.validar_idade(idade)
+        self._telefone = self.validar_telefone(telefone)
+        self._email = self.validar_email(email)
 
-    @classmethod
     def validar_cliente(self, cliente):
         dados_cliente = (cliente.nome, cliente.cpf, cliente.idade,
                          cliente.telefone, cliente.email)
@@ -75,12 +74,12 @@ class Cliente:
 
     @idade.setter
     def idade(self, idade):
-        self._idade = Cliente.validar_idade(idade)
+        self._idade = self.validar_idade(idade)
 
     @telefone.setter
     def telefone(self, telefone):
-        self._telefone = Cliente.validar_telefone(telefone)
+        self._telefone = self.validar_telefone(telefone)
 
     @email.setter
     def email(self, email):
-        self._email = Cliente.validar_email(email)
+        self._email = self.validar_email(email)
